@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}
+    {% endblock %}
 
 
     <title> Olaks | {% block title %} {% endblock %}</title>
@@ -17,11 +19,9 @@
 <body style="background-color:  #778710">
 
   
-  <!-- navbar section -->
     <nav class="navbar navbar-expand-lg" style="background-color: white;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="color: orange; font-size: 10px; margin-right: -2px;">
-            <!-- <i class="fa-brands fa-amazon"></i> -->
+          <a class="navbar-brand" href="/" style="color: orange; font-size: 10px; margin-right: -2px;">
             <img src="{{ url_for('static', filename='images/icon.png') }}" alt="Olaks" style="width: 90px;">
 
           </a>
@@ -37,11 +37,11 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-grey" href="#" style="font-size: 17px;">About Us</a>
+                <a class="nav-link text-grey" href="/about-us" style="font-size: 17px;">About Us</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-grey" href="#" style="font-size: 17px;">Contact us</a>
+                <a class="nav-link text-grey" href="/contact-us" style="font-size: 17px;">Contact us</a>
               </li>
             </ul>
 
@@ -56,13 +56,15 @@
 
             <li class="nav-item mx-2" id="items">
 
-              <a class="nav-link text-grey" href="#"><span class="badge bg-success"></span> Cart
+              {% if cart|length < 1 %}
+              <a class="nav-link text-grey" href="/cart"><span class="badge bg-success"></span> Cart
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
-
-              <!-- <a class="nav-link text-grey" href="#"><span class="badge bg-success"></span> Cart
+              {% else %}
+              <a class="nav-link text-grey" href="/cart"><span class="badge bg-success"></span> Cart
                 <i class="bi bi-{{ cart | length }}-square-fill"></i>
-              </a> -->
+              </a>
+              {% endif %}
 
             </li>
 
@@ -80,12 +82,16 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
 
-                <li><a class="dropdown-item" href="#">Profile <i class="fa-solid fa-user"></i></a></li>
-                <li><a class="dropdown-item" href="#">Orders <i class="fa-solid fa-truck-fast"></i></a></li>
-                <li><a class="dropdown-item" href="#">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% if current_user.is_authenticated %}
 
+                <li><a class="dropdown-item" href="/profile/{{ current_user.id }}">Profile <i class="fa-solid fa-user"></i></a></li>
+                <li><a class="dropdown-item" href="/orders">Orders <i class="fa-solid fa-truck-fast"></i></a></li>
+                <li><a class="dropdown-item" href="/logout">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
 
-                <li><a class="dropdown-item" href="#">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="/login">Login <i class="fa-solid fa-right-to-bracket"></i></a></li>
+
+                {% endif %}
 
               </ul>
 
