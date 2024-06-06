@@ -8,11 +8,13 @@ main {
 
 .company-info h2, .team h2 {
     border-bottom: 2px solid #201087;
+    border-bottom: 2px solid orange;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
 .company-info p {
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -26,20 +28,24 @@ main {
     text-align: center;
     width: 30%;
     margin-bottom: 20px;
+    border: 1px solid #778710;
 }
 
 .team-member img {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    border: 2px solid #201087;
 }
 
 .team-member h3 {
     margin: 10px 0 5px 0;
+    color: #201087;
+    
 }
 
 .team-member p {
-    color:  #201087;
+    color: #000000;
 }
 
 footer {
