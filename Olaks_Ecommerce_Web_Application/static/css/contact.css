@@ -1,0 +1,65 @@
+main {
+    padding: 20px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-info h2 {
+    color: #201087; /* Primary Color */
+    border-bottom: 2px solid #f5a623; /* Secondary Color */
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #000000; /* Tagline Color */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #778710; /* Complementary Color */
+    border-radius: 5px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    color: #201087; /* Primary Color */
+    margin-bottom: 5px;
+}
+
+.contact-form .form-group input,
+.contact-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #201087; /* Primary Color */
+    border-radius: 3px;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    outline: none;
+    border-color: #f5a623; /* Secondary Color */
+}
+
+.btn-primary {
+    background-color: #f5a623; /* Secondary Color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.btn-primary:hover {
+    background-color: #201087; /* Primary Color */
+}
