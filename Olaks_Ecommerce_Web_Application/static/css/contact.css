@@ -41,18 +41,18 @@ main {
 .contact-form .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #201087; /* Primary Color */
+    border: 1px solid #201087;
     border-radius: 3px;
 }
 
 .contact-form .form-group input:focus,
 .contact-form .form-group textarea:focus {
     outline: none;
-    border-color: #f5a623; /* Secondary Color */
+    border-color: #f5a623;
 }
 
 .btn-primary {
-    background-color: #f5a623; /* Secondary Color */
+    background-color: #f5a623;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -61,5 +61,5 @@ main {
 }
 
 .btn-primary:hover {
-    background-color: #201087; /* Primary Color */
+    background-color: #201087;
 }
